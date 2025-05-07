@@ -1,0 +1,224 @@
+
+/* ===========================================
+   GLOBAL STYLESHEET — SmarterPayouts Landing Page
+   Description: Responsive hero page with clean color palette,
+   scalable variables, modern layout, and mobile responsiveness.
+   Fonts: Inter (body), Oswald (headings)
+=========================================== */
+
+/* --------------------
+   Font Imports
+-------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* --------------------
+   Color Variables
+-------------------- */
+:root {
+  --smarter-blue:   #0033cc;
+  --smarter-accent: #005be4;
+  --smarter-green:  #00ffcc;
+  --smarter-white:  #ffffff;
+  --smarter-black:  #000000;
+  --smarter-overlay: rgba(0, 0, 0, 0.5);
+
+  --smarter-yellow: #ffd60a;
+  --smarter-lightblue: #97c6fe;
+  --smarter-purple: #b880ff;
+  --smarter-orange: #ffaa48;
+  --smarter-lightgray: #f9f9f9;
+  --smarter-gray: #777;
+  --smarter-footer-bg: #000;
+  --smarter-footer-text: #fff;
+
+  --animation-duration: 1s;
+}
+
+/* --------------------
+   Base Reset
+-------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--smarter-black);
+  color: var(--smarter-white);
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+}
+
+/* --------------------
+   Navbar
+-------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background-color: var(--smarter-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--smarter-blue);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+.nav-links li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 5px;
+  color: var(--smarter-black);
+}
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: var(--smarter-black);
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--smarter-white);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* --------------------
+   Hero Section
+-------------------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+#bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+  z-index: 1;
+}
+.black-screen {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 1;
+  transition: opacity 1s ease-in-out;
+}
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--smarter-overlay);
+  z-index: 2;
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-top: 60px;
+  text-align: center;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.hero-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.hero-content p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  margin: 0 auto 50px auto;
+  max-width: 500px;
+}
+.highlight {
+  color: var(--smarter-green);
+}
+
+/* --------------------
+   CTA Buttons
+-------------------- */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.btn {
+  padding: 14px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  width: 260px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.btn.primary {
+  background-color: var(--smarter-accent);
+  color: var(--smarter-white);
+}
+.btn.outline {
+  border: 2px solid var(--smarter-white);
+  background: transparent;
+  color: var(--smarter-white);
+}
+
+/* --------------------
+   Responsive Fixes
+-------------------- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .hero-content p {
+    font-size: 1.125rem;
+  }
+  .btn {
+    width: 90%;
+    max-width: 260px;
+  }
+}
