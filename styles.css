@@ -222,3 +222,19 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 260px;
   }
 }
+/* Example CSS for video background */
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
